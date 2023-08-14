@@ -1,6 +1,6 @@
 <template>
   <div class="right-panel">
-    <full-screen></full-screen>
+    <full-screen />
     <!-- <el-popover placement="bottom" :width="320" trigger="hover">
       <template #reference>
         <icon-remind
@@ -23,45 +23,44 @@
     </el-popover> -->
 
     <icon-refresh
-      title="刷新"
       class="icon-hover refresh"
-      theme="filled"
-      size="16"
       :fill="color"
-      :strokeWidth="4"
-    ></icon-refresh>
-    <Avatar :color="color"></Avatar>
+      size="16"
+      :stroke-width="4"
+      theme="filled"
+      title="刷新"
+    />
+    <Avatar :color="color" />
   </div>
 </template>
 
 <script setup>
-import Avatar from './Avatar.vue';
+  import Avatar from './Avatar.vue'
 
-defineProps({
-  color: {
-    type: String,
-    default: '#fff',
-  },
-});
-
+  defineProps({
+    color: {
+      type: String,
+      default: '#fff',
+    },
+  })
 </script>
 
 <script>
-export default {
-  name: 'RightPanel',
-}
+  export default {
+    name: 'RightPanel',
+  }
 </script>
 
 <style lang="scss" scoped>
-.right-panel{
-  display: flex;
-  align-content: center;
-  align-items: center;
-  justify-content: flex-end;
-  height: $base-nav-bar-height;
-  .refresh {
-    padding-left: 10px;
-    padding-right: 15px;
+  .right-panel {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-end;
+    height: $base-nav-bar-height;
+    .refresh {
+      padding-right: 15px;
+      padding-left: 10px;
+    }
   }
-}
 </style>

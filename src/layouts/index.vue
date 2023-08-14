@@ -1,12 +1,12 @@
 <template>
   <div class="admin-container">
-      <Horizontal> </Horizontal>
-      <el-backtop></el-backtop>
+    <Horizontal />
+    <el-backtop />
   </div>
 </template>
 
 <script setup>
-import Horizontal from './components/Horizontal.vue';
+  import Horizontal from './components/Horizontal.vue'
 </script>
 
 <style lang="scss" scoped>

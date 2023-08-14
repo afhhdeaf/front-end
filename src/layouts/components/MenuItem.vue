@@ -1,16 +1,16 @@
 <template>
   <el-menu-item
+    v-if="!item.meta || !item.children"
     :key="item.path"
     :index="item.children ? item.children[0].path : item.path"
-    v-if="!item.meta || !item.children"
   >
     <component
-      class="menu-icon"
-      v-if="item.children ? item.children[0].meta.icon : item.meta.icon"
-      theme="outline"
-      size="14"
-      strokeWidth="3"
       :is="item.children ? item.children[0].meta.icon : item.meta.icon"
+      v-if="item.children ? item.children[0].meta.icon : item.meta.icon"
+      class="menu-icon"
+      size="14"
+      stroke-width="3"
+      theme="outline"
     />
     <template #title>
       <span class="title">
@@ -18,30 +18,30 @@
       </span>
     </template>
   </el-menu-item>
-  <el-sub-menu :index="item.path" v-else>
+  <el-sub-menu v-else :index="item.path">
     <template #title>
       <component
-        class="menu-icon"
-        v-if="item.meta.icon"
-        theme="outline"
-        size="14"
-        strokeWidth="3"
         :is="item.meta.icon"
+        v-if="item.meta.icon"
+        class="menu-icon"
+        size="14"
+        stroke-width="3"
+        theme="outline"
       />
       <span class="title">{{ item.meta.title }}</span>
     </template>
-    <template v-for="(option, index) in item.children" >
+    <template v-for="(option, index) in item.children">
       <menu-item v-if="option.children" :key="option.path" :item="option" />
-      <el-menu-item v-else :index="option.path" :key="index" >
+      <el-menu-item v-else :key="index" :index="option.path">
         <component
-          class="menu-icon"
-          v-if="option.meta.icon"
-          theme="outline"
-          size="14"
-          strokeWidth="3"
           :is="option.meta.icon"
+          v-if="option.meta.icon"
+          class="menu-icon"
+          size="14"
+          stroke-width="3"
+          theme="outline"
         />
-        <span class="title" >
+        <span class="title">
           {{ option.meta.title }}
         </span>
       </el-menu-item>
@@ -52,20 +52,18 @@
 <script>
   export default {
     name: 'MenuItem',
-  };
+  }
 </script>
 
 <script setup>
-
   defineProps({
     item: {
       type: Object,
       default: () => {
-        return {};
+        return {}
       },
     },
-  });
-
+  })
 </script>
 <style lang="scss" scoped>
   .menu-icon,
@@ -81,15 +79,14 @@
   .title {
     padding-left: 6px;
   }
-  .el-menu-item:hover{
-    outline: 0 !important;
+  .el-menu-item:hover {
     // color: #409eff !important;
-    background-color: #409eff !important;;
-  }
-  .el-menu-item.is-active{
+    background-color: #409eff !important;
     outline: 0 !important;
-    // color: #409eff !important;
-    background-color: #409eff !important;;
   }
-
+  .el-menu-item.is-active {
+    // color: #409eff !important;
+    background-color: #409eff !important;
+    outline: 0 !important;
+  }
 </style>

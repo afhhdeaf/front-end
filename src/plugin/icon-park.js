@@ -1,6 +1,6 @@
-import { install } from '@icon-park/vue-next/es/all';
-import SvgIcon from '@/components/SvgIcon.vue';
-import '@icon-park/vue-next/styles/index.css';
+import { install } from '@icon-park/vue-next/es/all'
+import SvgIcon from '@/components/SvgIcon.vue'
+import '@icon-park/vue-next/styles/index.css'
 // iconpark
 import {
   User,
@@ -51,7 +51,7 @@ import {
   MultiPictureCarousel,
   Theme,
   Translate,
-} from '@icon-park/vue-next';
+} from '@icon-park/vue-next'
 // el-icon
 export const components = [
   User,
@@ -102,10 +102,10 @@ export const components = [
   MultiPictureCarousel,
   Theme,
   Translate,
-];
+]
 
 // 注册
 export default (app) => {
-  app.component('svg-icon', SvgIcon);
-  install(app);
-};
+  app.component('SvgIcon', SvgIcon)
+  install(app)
+}

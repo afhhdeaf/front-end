@@ -1,7 +1,7 @@
 <template>
   <div class="app-main-container">
-    <router-view class="app-main-height"></router-view>
-    <footer class="copyright"> © 2022 Raven Stock</footer>
+    <router-view class="app-main-height" />
+    <footer class="copyright"></footer>© 2022 Raven Stock</footer>
   </div>
 </template>
 

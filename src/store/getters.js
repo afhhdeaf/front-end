@@ -3,5 +3,5 @@ const getters = {
   token: (state) => state.user.token,
   collapse: (state) => state.setting.collapse,
   fullScreen: (state) => state.setting.fullScreen,
-};
-export default getters;
+}
+export default getters
