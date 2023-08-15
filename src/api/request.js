@@ -51,7 +51,6 @@ const handleData = ({ data, status }) => {
 }
 
 const instance = axios.create({
-  // baseURL: 'http://8.130.166.71:8080',
   baseURL: 'http://192.168.3.6:8080',
   timeout: 10000,
   headers: {
